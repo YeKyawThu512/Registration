@@ -1,0 +1,84 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{2E38D8C1-55DB-4A70-A0A0-5E7E4CF35B9C}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Project2.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\BMIcalculator(ye kyaw thu)\CalculatingBMI_p.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\DataLogin\DataLogin_p.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="D:\FireMonkey\map\Project1.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="D:\FireMonkey\test\Test.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="Project2">
+        <MSBuild Projects="Project2.dproj"/>
+    </Target>
+    <Target Name="Project2:Clean">
+        <MSBuild Projects="Project2.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Project2:Make">
+        <MSBuild Projects="Project2.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CalculatingBMI_p">
+        <MSBuild Projects="..\BMIcalculator(ye kyaw thu)\CalculatingBMI_p.dproj"/>
+    </Target>
+    <Target Name="CalculatingBMI_p:Clean">
+        <MSBuild Projects="..\BMIcalculator(ye kyaw thu)\CalculatingBMI_p.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CalculatingBMI_p:Make">
+        <MSBuild Projects="..\BMIcalculator(ye kyaw thu)\CalculatingBMI_p.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DataLogin_p">
+        <MSBuild Projects="..\DataLogin\DataLogin_p.dproj"/>
+    </Target>
+    <Target Name="DataLogin_p:Clean">
+        <MSBuild Projects="..\DataLogin\DataLogin_p.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DataLogin_p:Make">
+        <MSBuild Projects="..\DataLogin\DataLogin_p.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Project1">
+        <MSBuild Projects="D:\FireMonkey\map\Project1.dproj"/>
+    </Target>
+    <Target Name="Project1:Clean">
+        <MSBuild Projects="D:\FireMonkey\map\Project1.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Project1:Make">
+        <MSBuild Projects="D:\FireMonkey\map\Project1.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Test">
+        <MSBuild Projects="D:\FireMonkey\test\Test.dproj"/>
+    </Target>
+    <Target Name="Test:Clean">
+        <MSBuild Projects="D:\FireMonkey\test\Test.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Test:Make">
+        <MSBuild Projects="D:\FireMonkey\test\Test.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="Project2;CalculatingBMI_p;DataLogin_p;Project1;Test"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="Project2:Clean;CalculatingBMI_p:Clean;DataLogin_p:Clean;Project1:Clean;Test:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="Project2:Make;CalculatingBMI_p:Make;DataLogin_p:Make;Project1:Make;Test:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

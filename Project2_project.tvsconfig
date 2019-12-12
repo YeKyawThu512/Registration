@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<TgConfig Version="3" SubLevelDisabled="False">
+  <Option Name="namespaceFolder.Form_u" Type="System.String" Value="Form_u" Category="General" IsBrowsable="False" />
+  <Option Name="namespaceFolder.admin_u" Type="System.String" Value="admin_u" Category="General" IsBrowsable="False" />
+</TgConfig>
